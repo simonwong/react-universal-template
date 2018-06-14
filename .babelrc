@@ -1,0 +1,8 @@
+{
+    "cacheDirectory": true,
+    "presets": [ "env", "react", "stage-0" ],
+    "plugins": [
+        "react-hot-loader/babel",
+        "transform-runtime"
+    ]
+}
