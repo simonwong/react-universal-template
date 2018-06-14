@@ -1,5 +1,18 @@
-# vscode config
+# dependencies
+/node_modules
+
+# production
+dist/
 .vscode/
 
-node_modules/
-dist/
+# misc
+.DS_Store
+npm-debug.log*
+yarn-error.log
+
+/coverage
+.idea
+yarn.lock
+package-lock.json
+*bak
+jsconfig.json
