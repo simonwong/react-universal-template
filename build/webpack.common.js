@@ -14,8 +14,8 @@ const cssLoader = [
         options: {
             modules: true, // css模块加载
             localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
-            importLoaders: 1
-        }
+            importLoaders: 1,
+        },
     },
     'postcss-loader',
 ]
@@ -31,7 +31,7 @@ module.exports = {
     output: {
         filename: '[name]-[hash:8].js',
         publicPath: PATHS.public,
-        path: path.resolve(__dirname, 'dist')
+        path: path.resolve(__dirname, 'dist'),
     },
     module: {
         rules: [
@@ -51,7 +51,7 @@ module.exports = {
                 use: [
                     ...cssLoader,
                     'sass-loader',
-                ]
+                ],
             },
             {
                 test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
@@ -61,30 +61,30 @@ module.exports = {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
-                        }
-                    }
-                ]
+                        },
+                    },
+                ],
             },
             {
                 test: /\.(eot|woff|ttf|woff2|svg)$/,
                 use: 'url-loader',
-            }
-        ]
+            },
+        ],
     },
     resolve: {
         // 配置默认拓展名。在import的时候就不用写后缀了
-        extensions: [ '.js', '.jsx', '.scss' ],
+        extensions: ['.js', '.jsx', '.scss'],
     },
     plugins: [
         new CleanWebpackPlugin(['dist']),
         new HtmlWebpackPlugin({
             title: 'React App',
-            template: './template/index.html'
+            template: './template/index.html',
             // favicon: path.join(PATHS.public, 'favicon.ico'),
             // hash: true,
             // meta: {
             //     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
             // },
         }),
-    ]
+    ],
 }
