@@ -37,7 +37,6 @@
 - postcss-loader 
 - autoprefixer css兼容处理
 - react-hot-loader 热加载
-- redbox-react 更好的展示报错信息
 - html-webpack-plugin 
 - clean-webpack-plugin 
 - webpack 

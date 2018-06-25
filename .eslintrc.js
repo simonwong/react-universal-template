@@ -2,12 +2,12 @@ const eslintrc = {
     parser: 'babel-eslint',
     extends: [
         'airbnb',
-        // 'plugin:react/recommended',
+        'plugin:react/recommended',
     ],
     plugins: [
         'babel',
         'react',
-        // 'jsx-a11y'
+        'jsx-a11y'
     ],
     env: {
         browser: true,
@@ -15,48 +15,55 @@ const eslintrc = {
         es6: true
     },
     parserOptions: {
+        ecmaVersion: 2017,
+        sourceType: 'module',
         ecmaFeatures: {
+            jsx: true,
             experimentalObjectRestSpread: true
         }
     },
     rules: {
-        'semi': [0],
-        'indent': ['error', 4],
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
-        'linebreak-style': ['error', 'windows'],
-        'react/no-multi-comp': [0],
-        'no-param-reassign': [0],
-        'camelcase': [0],
-        'no-debugger': [0],
-
-        'func-names': 0,
-        'arrow-body-style': 0,
-        'react/sort-comp': 0,
-        'react/prop-types': 0,
-        'react/jsx-first-prop-new-line': 0,
-        'react/jsx-filename-extension': [1, {
+        'react/no-multi-comp': ['off'],
+        'react/sort-comp': 'off',
+        'react/prop-types': 'off',
+        'react/jsx-first-prop-new-line': 'off',
+        'react/jsx-filename-extension': ['warn', {
             extensions: ['.js', '.jsx', '.md']
         }],
-        'import/extensions': 0,
-        'import/no-unresolved': 0,
-        'import/no-extraneous-dependencies': 0,
-        'prefer-destructuring': 0,
-        'no-param-reassign': 0,
-        'no-return-assign': 0,
-        'max-len': 0,
-        'consistent-return': 0,
-        'no-redeclare': 0,
-        'react/require-extension': 0,
-        'jsx-a11y/no-static-element-interactions': 0,
-        'jsx-a11y/anchor-has-content': 0,
-        'jsx-a11y/click-events-have-key-events': 0,
-        'jsx-a11y/anchor-is-valid': 0,
-        'react/no-danger': 0,
+        'react/no-danger': 'off',
+        'react/require-extension': 'off',
+
+        'import/extensions': 'off',
+        'import/no-unresolved': 'off',
+        'import/no-extraneous-dependencies': 'off',
+
+        'jsx-a11y/no-static-element-interactions': 'off',
+        'jsx-a11y/anchor-has-content': 'off',
+        'jsx-a11y/click-events-have-key-events': 'off',
+        'jsx-a11y/anchor-is-valid': 'off',
+
+        'global-require': 'off',
+        'semi': ['error', 'never'],
+        'indent': ['error', 4],
+        'linebreak-style': ['error', 'windows'],
+        'no-param-reassign': ['off'],
+        'camelcase': ['off'],
+        'no-debugger': ['off'],
+        'space-before-function-paren': ['error', 'always'],
+        'func-names': 'off',
+        'arrow-body-style': 'off',
+        'prefer-destructuring': 'off',
+        'no-param-reassign': 'off',
+        'no-return-assign': 'off',
+        'max-len': 'off',
+        'consistent-return': 'off',
+        'no-redeclare': 'off',
         'comma-dangle': ['error', 'always-multiline'],
-        'function-paren-newline': 0,
-        'object-curly-newline': 0,
-        'no-restricted-globals': 0,
+        'function-paren-newline': 'off',
+        'object-curly-newline': 'off',
+        'no-restricted-globals': 'off',
     },
     // settings: {
     //     polyfills: ['fetch', 'promises']

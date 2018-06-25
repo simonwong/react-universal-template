@@ -23,7 +23,7 @@ const cssLoader = [
 module.exports = {
     entry: {
         app: [
-            'react-hot-loader/patch',
+            'react-hot-loader/patch', // 激活HMR ?
             path.join(PATHS.src, 'index'),
         ],
         // vendor: ['react', 'react-dom', 'react-router-dom'],
@@ -54,19 +54,19 @@ module.exports = {
                 exclude: /node_modules/,
                 use: 'babel-loader?cacheDirectory', // cacheDirectory缓存，加快打包速度
             },
-            // {
-            //     test: /\.css$/,
-            //     exclude: /node_modules/,
-            //     use: cssLoader,
-            // },
-            // {
-            //     test: /\.scss$/,
-            //     exclude: /node_modules/,
-            //     use: [
-            //         ...cssLoader,
-            //         'sass-loader',
-            //     ],
-            // },
+            {
+                test: /\.css$/,
+                exclude: /node_modules/,
+                use: cssLoader,
+            },
+            {
+                test: /\.scss$/,
+                exclude: /node_modules/,
+                use: [
+                    ...cssLoader,
+                    'sass-loader',
+                ],
+            },
             // {
             //     test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
             //     exclude: /node_modules/,

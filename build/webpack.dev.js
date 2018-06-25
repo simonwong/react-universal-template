@@ -13,8 +13,8 @@ module.exports = merge(common, {
     devServer: {
         contentBase: PATHS.dist,
         historyApiFallback: true,
-        inline: true,
         hot: true,
+        inline: true,
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

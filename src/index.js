@@ -4,20 +4,33 @@ import { AppContainer } from 'react-hot-loader'
 
 import App from './containers/App'
 
-const render = (Component) => {
-    ReactDOM.render(
-        <AppContainer>
-            <Component />
-        </AppContainer>,
-        document.getElementById('root')
-    )
-}
+import './styles/common.scss'
 
-render(App)
+ReactDOM.render(
+    <AppContainer>
+        <App />
+    </AppContainer>,
+    document.getElementById('root')
+)
 
 if (module.hot) {
-    module.hot.accept('./containers/App', () => {
-        console.log('isUpdate', App)
-        render(App)
-    })
+    // TODO: ???
+    module.hot.accept()
 }
+
+// const render = (Component) => {
+//     ReactDOM.render(
+//         <AppContainer>
+//             <Component />
+//         </AppContainer>,
+//         document.getElementById('root')
+//     )
+// }
+
+// render(App)
+
+// if (module.hot) {
+//     module.hot.accept('./containers/App', () => {
+//         render(App)
+//     })
+// }

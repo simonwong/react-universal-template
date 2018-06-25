@@ -1,25 +1,26 @@
-import React, { Component } from 'react'
+import React, { Component, Fragment } from 'react'
+import HeaderMenu from 'Components/HeaderMenu'
 
 export default class IndexApp extends Component {
-    constructor(props) {
+    constructor (props) {
         super(props)
 
         this.state = {
-            list: [
-                '1',
+            menuList: [
+                'HOME',
+                'HELLO',
+                'WORLD',
+                'ABOUT',
             ],
         }
     }
-    render() {
+    render () {
         return (
-            <div>
-                <h3>12312312</h3>
-                <ul>
-                    {this.state.list.map(item => (
-                        <li key={item}>{item}</li>
-                    ))}
-                </ul>
-            </div>
+            <Fragment>
+                <HeaderMenu
+                    menuList={this.state.menuList}
+                />
+            </Fragment>
         )
     }
 }
