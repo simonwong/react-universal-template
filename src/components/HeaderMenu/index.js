@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { PureComponent } from 'react'
 import PropTypes from 'prop-types'
 import styles from './HeaderMenu.scss'
 
-export default class HeaderMenu extends Component {
+export default class HeaderMenu extends PureComponent {
     constructor (props) {
         super(props)
 
