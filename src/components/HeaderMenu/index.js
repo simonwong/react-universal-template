@@ -1,38 +1,28 @@
-import React, { PureComponent } from 'react'
+import React, { Component } from 'react'
+import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
 import styles from './HeaderMenu.scss'
 
-export default class HeaderMenu extends PureComponent {
-    constructor (props) {
-        super(props)
-
-        this.state = {
-            active: '',
-        }
-    }
-
+export default class HeaderMenu extends Component {
     handleClick = (menu) => {
-        this.setState({
-            active: menu,
-        })
-
         this.props.onSelect(menu)
     }
 
     render () {
-        const { menuList, activeMenu } = this.props
-        const active = activeMenu || this.state.active || menuList[0]
+        const { menuList } = this.props
 
         return (
             <nav className={styles.container}>
                 {
                     menuList.map(menu => (
-                        <a
-                            className={`${styles.tag} ${menu === active ? styles.active : ''}`}
-                            onClick={() => { this.handleClick(menu) }}
+                        <NavLink
+                            className={styles.tag}
+                            activeClassName={styles.active}
                             key={menu}
-                        >{ menu }
-                        </a>
+                            to={`/${menu}`}
+                        >
+                            { menu }
+                        </NavLink>
                     ))
                 }
             </nav>
@@ -42,13 +32,11 @@ export default class HeaderMenu extends PureComponent {
 
 HeaderMenu.defaultProps = {
     onSelect: () => {},
-    activeMenu: null,
 }
 
 HeaderMenu.propTypes = {
     menuList: PropTypes.arrayOf(
         PropTypes.string
     ).isRequired,
-    activeMenu: PropTypes.string,
     onSelect: PropTypes.func,
 }

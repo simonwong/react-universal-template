@@ -5,10 +5,15 @@ import {
     BrowserRouter as Router,
     Route,
     Switch,
+    Redirect,
+    withRouter,
 } from 'react-router-dom'
 
 import HeaderMenu from 'Components/HeaderMenu'
 import GlobalLoading from 'Components/GlobalLoading'
+import IndexHome from './Home'
+import IndexHello from './Hello'
+import IndexWorld from './World'
 import { actions } from '../reducers'
 
 class IndexApp extends Component {
@@ -17,16 +22,18 @@ class IndexApp extends Component {
 
         this.state = {
             menuList: [
-                'HOME',
-                'HELLO',
-                'WORLD',
-                'ABOUT',
+                'home',
+                'hello',
+                'world',
             ],
         }
     }
 
     changeMenu = (menu) => {
-        this.props.change_menu(menu)
+        const { change_menu, history } = this.props
+        change_menu(menu)
+        // history.push(`/${menu}`)
+        // console.log(this.props)
     }
 
     render () {
@@ -39,11 +46,14 @@ class IndexApp extends Component {
                     activeMenu={activeMenu}
                     onSelect={this.changeMenu}
                 />
-                {/* <Router>
+                <Router>
                     <Switch>
-                        <Route path="/home" component={} />
+                        <Route exact path="/home" component={IndexHome} />
+                        <Route exact path="/hello" component={IndexHello} />
+                        <Route exact path="/world" component={IndexWorld} />
+                        <Redirect exact from="/" to="/home" />
                     </Switch>
-                </Router> */}
+                </Router>
                 <GlobalLoading show={isFetching} />
             </Fragment>
         )
@@ -51,19 +61,23 @@ class IndexApp extends Component {
 }
 
 const mapStateToProps = (state) => {
-    const { isFetching, activeMenu } = state.global
+    const { isFetching } = state.global
 
     return {
         isFetching,
-        activeMenu,
     }
 }
 
 const mapDispatchToProps = dispatch => ({
-    change_menu: bindActionCreators(actions.change_menu, dispatch),
 })
 
-export default connect(
-    mapStateToProps,
-    mapDispatchToProps,
-)(IndexApp)
+// export default connect(
+//     mapStateToProps,
+//     mapDispatchToProps,
+// )(IndexApp)
+export default withRouter(
+    connect(
+        mapStateToProps,
+        mapDispatchToProps,
+    )(IndexApp)
+)
