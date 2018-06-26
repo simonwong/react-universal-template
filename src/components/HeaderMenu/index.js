@@ -21,7 +21,7 @@ export default class HeaderMenu extends PureComponent {
 
     render () {
         const { menuList, activeMenu } = this.props
-        const active = activeMenu || this.state.active
+        const active = activeMenu || this.state.active || menuList[0]
 
         return (
             <nav className={styles.container}>
