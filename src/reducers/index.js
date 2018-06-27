@@ -1,4 +1,5 @@
 import { combineReducers } from 'redux'
+import { reducer as article } from './article'
 
 const initialState = {
     isFetching: false,
@@ -7,14 +8,10 @@ const initialState = {
 export const actionTypes = {
     FETCH_START: 'FETCH_START',
     FETCH_END: 'FETCH_END',
-    // CHANGE_MENU: 'CHANGE_MENU',
 }
 
 export const actions = {
-    // change_menu: menu => ({
-    //     type: 'CHANGE_MENU',
-    //     payload: menu,
-    // }),
+
 }
 
 export const reducer = (state = initialState, action) => {
@@ -29,11 +26,6 @@ export const reducer = (state = initialState, action) => {
             ...state,
             isFetching: false,
         }
-    // case actionTypes.CHANGE_MENU:
-    //     return {
-    //         ...state,
-    //         activeMenu: action.payload,
-    //     }
     default:
         return state
     }
@@ -41,4 +33,5 @@ export const reducer = (state = initialState, action) => {
 
 export default combineReducers({
     global: reducer,
+    article,
 })
