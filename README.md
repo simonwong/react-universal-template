@@ -18,28 +18,18 @@
 - babel-loader 转化es6代码
 - babel-plugin-transform-runtime 避免重复引入
 - babel-preset-env 按需转化代码
-- babel-preset-react 
-- babel-preset-stage-0 
-- eslint 
+- babel-preset-react
+- babel-preset-stage-0
 - eslint-config-airbnb Airbnb可能是最严格的代码规范
 - eslint-plugin-babel
-- eslint-plugin-import
 - eslint-plugin-react 支持react语法检测
 - eslint-plugin-jsx-a11y 支持jsx检测
-- file-loader 
-- node-loader 
-- url-loader 
-- sass 
-- css-loader 
-- node-sass 
-- sass-loader 
-- style-loader 
-- postcss-loader 
+- postcss-loader
 - autoprefixer css兼容处理
 - react-hot-loader 热加载
 - html-webpack-plugin 
 - clean-webpack-plugin 
-- webpack 
+- webpack
 - webpack-cli 4.0开始命令行放在这里了
 - webpack-merge 合并webpack配置
 
