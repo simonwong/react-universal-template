@@ -20,10 +20,14 @@ class IndexHome extends Component {
                     >Get Data
                     </button>
                 </div>
-                <ul>
+                <ul className={styles.articleList}>
                     {
                         articleList.map(item => (
-                            <li key={item.id}>{item.title}</li>
+                            <li
+                                className={styles.articleItem}
+                                key={item.id}
+                            >{item.title}
+                            </li>
                         ))
                     }
                 </ul>
