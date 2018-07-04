@@ -1,5 +1,17 @@
 # React 通用模板 #
 
+## 使用 ##
+
+```
+git clone https://github.com/simonjayw/react-universal-template
+
+cd react-universal-template
+
+npm install
+
+npm start
+```
+
 ## 技术栈 ##
 
 - react
