@@ -47,7 +47,7 @@ const eslintrc = {
         'global-require': 'off',
         'semi': ['error', 'never'],
         'indent': ['error', 4],
-        'linebreak-style': ['error', 'windows'],
+        'linebreak-style': ['error', 'unix'],
         'no-param-reassign': ['off'],
         'camelcase': ['off'],
         'no-debugger': ['off'],

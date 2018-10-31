@@ -22,11 +22,10 @@ if (process.env.NODE_ENV === 'production') {
 
 const configureStore = (initialState = {}) => {
     const store = createStore(rootReducer, initialState, storeEnhancers)
-    // TODO: ???
+
     sagaMiddleware.run(rootSaga)
 
     if (module.hot && process.env.NODE_ENV === 'development') {
-        // TODO: ???
         module.hot.accept('./reducers', () => {
             const nextRootReducer = require('./reducers/index')
             store.replaceReducer(nextRootReducer)

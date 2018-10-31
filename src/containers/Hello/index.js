@@ -11,15 +11,15 @@ export default class IndexHello extends Component {
                 },
                 {
                     id: 2,
-                    text: 'HELLO',
+                    text: 'World',
                 },
                 {
                     id: 3,
-                    text: 'HELLO',
+                    text: 'Hello',
                 },
                 {
                     id: 4,
-                    text: 'HELLO',
+                    text: 'World',
                 },
             ],
         }
