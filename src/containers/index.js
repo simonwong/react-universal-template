@@ -10,7 +10,7 @@ import {
 import HeaderMenu from 'Components/HeaderMenu'
 import GlobalLoading from 'Components/GlobalLoading'
 import IndexHome from './Home'
-import IndexHello from './Hello'
+import IndexHoc from './Hoc'
 import IndexWorld from './World'
 
 class IndexApp extends Component {
@@ -20,7 +20,7 @@ class IndexApp extends Component {
         this.state = {
             menuList: [
                 'home',
-                'hello',
+                'hoc',
                 'world',
             ],
         }
@@ -44,7 +44,7 @@ class IndexApp extends Component {
                     />
                     <Switch>
                         <Route exact path="/home" component={IndexHome} />
-                        <Route exact path="/hello" component={IndexHello} />
+                        <Route exact path="/hoc" component={IndexHoc} />
                         <Route exact path="/world" component={IndexWorld} />
                         <Redirect exact from="/" to="/home" />
                     </Switch>

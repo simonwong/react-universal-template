@@ -28,11 +28,6 @@ instance.interceptors.response.use((res) => {
     return Promise.reject(error)
 })
 
-const createAPI = (url, method, config) =>
-    instance({
-        url,
-        method,
-        ...config,
-    })
+const createAPI = (url, method, config) => instance({ url, method, ...config })
 
 export default createAPI

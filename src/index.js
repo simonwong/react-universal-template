@@ -20,6 +20,5 @@ ReactDOM.render(
 )
 
 if (module.hot) {
-    // TODO: ???
     module.hot.accept()
 }

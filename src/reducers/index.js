@@ -11,7 +11,12 @@ export const actionTypes = {
 }
 
 export const actions = {
-
+    fetch_start: () => ({
+        type: 'FETCH_START',
+    }),
+    fetch_end: () => ({
+        type: 'FETCH_END',
+    }),
 }
 
 export const reducer = (state = initialState, action) => {
