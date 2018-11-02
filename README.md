@@ -25,11 +25,25 @@ npm start
 
 - babel-cli 通过命令行操作来编译文件
 - babel-eslint 使得eslint可以理解最新的语法。eslintrc中配置`"parser": "babel-eslint"`
-- babel-loader 转化es6代码
-- babel-plugin-transform-runtime 避免重复引入
-- babel-preset-env 按需转化代码
-- babel-preset-react
-- babel-preset-stage-0
+- babel-loader 转化es6代码 // 升级到8之后，关联的包使用变了
+
+> webpack 4.x | babel-loader 8.x | babel 7.x
+
+```javascript
+npm install -D babel-loader @babel/core @babel/preset-env webpack
+```
+
+> webpack 4.x | babel-loader 7.x | babel 6.x
+
+```javascript
+npm install -D babel-loader@7 babel-core babel-preset-env webpack
+```
+
+- @babel/plugin-transform-runtime
+- @babel/preset-env
+- @babel/preset-react
+- @babel/plugin-proposal-class-properties 不再使用preset-stage-x
+
 - eslint-config-airbnb Airbnb可能是最严格的代码规范
 - eslint-plugin-babel
 - eslint-plugin-react 支持react语法检测
