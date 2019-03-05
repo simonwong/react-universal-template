@@ -6,7 +6,8 @@ import styles from './Home.scss'
 
 class IndexHome extends Component {
     getData = () => {
-        this.props.get_article_list()
+        const { get_article_list } = this.props
+        get_article_list()
     }
 
     render () {
@@ -16,8 +17,10 @@ class IndexHome extends Component {
             <div className={styles.container}>
                 <div className={styles.top}>
                     <button
+                        type="button"
                         onClick={this.getData}
-                    >Get Data
+                    >
+                        Get Data
                     </button>
                 </div>
                 <ul className={styles.articleList}>
@@ -26,7 +29,8 @@ class IndexHome extends Component {
                             <li
                                 className={styles.articleItem}
                                 key={item.id}
-                            >{item.title}
+                            >
+                                {item.title}
                             </li>
                         ))
                     }

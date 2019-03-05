@@ -33,12 +33,13 @@ class IndexApp extends Component {
 
     render () {
         const { isFetching, activeMenu } = this.props
+        const { menuList } = this.state
 
         return (
             <Router>
                 <Fragment>
                     <HeaderMenu
-                        menuList={this.state.menuList}
+                        menuList={menuList}
                         activeMenu={activeMenu}
                         onSelect={this.changeMenu}
                     />

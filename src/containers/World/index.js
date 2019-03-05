@@ -21,15 +21,21 @@ export default class IndexWorld extends Component {
                     id: 4,
                     text: 'WORLD',
                 },
+                {
+                    id: 5,
+                    text: '111',
+                },
             ],
         }
     }
 
     render () {
+        const { data } = this.state
+        console.log(data)
         return (
             <ul>
                 {
-                    this.state.data.map(item => (
+                    data.map(item => (
                         <li key={item.id}>{ item.text }</li>
                     ))
                 }
