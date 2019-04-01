@@ -7,18 +7,6 @@ const PATHS = {
     src: path.join(__dirname, '../src'),
     dist: path.join(__dirname, '../dist'),
 }
-const cssLoader = [
-    'style-loader', // loader需要按顺序
-    {
-        loader: 'css-loader',
-        options: {
-            modules: true, // css模块加载
-            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
-            importLoaders: 1,
-        },
-    },
-    'postcss-loader',
-]
 
 module.exports = {
     entry: {
@@ -57,13 +45,33 @@ module.exports = {
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
-                use: cssLoader,
+                use: [
+                    'style-loader', // loader需要按顺序
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true, // css模块加载
+                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            importLoaders: 1,
+                        },
+                    },
+                    'postcss-loader',
+                ],
             },
             {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    ...cssLoader,
+                    'style-loader', // loader需要按顺序
+                    {
+                        loader: 'css-loader',
+                        options: {
+                            modules: true, // css模块加载
+                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            importLoaders: 2,
+                        },
+                    },
+                    'postcss-loader',
                     'sass-loader',
                 ],
             },
