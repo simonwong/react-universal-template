@@ -6,6 +6,7 @@ import {
     Switch,
     Redirect,
 } from 'react-router-dom'
+import { hot } from 'react-hot-loader/root'
 
 import HeaderMenu from 'Components/HeaderMenu'
 import GlobalLoading from 'Components/GlobalLoading'
@@ -66,7 +67,9 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = () => ({})
 
-export default connect(
+const ConnectApp = connect(
     mapStateToProps,
     mapDispatchToProps,
 )(IndexApp)
+
+export default hot(() => <ConnectApp />)
