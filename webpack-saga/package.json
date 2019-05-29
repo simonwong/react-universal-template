@@ -1,14 +1,14 @@
 {
-  "name": "react-universal-template",
+  "name": "react-template",
   "version": "1.1.0",
-  "description": "react universal template",
+  "description": "react template",
   "main": "index.js",
   "scripts": {
     "start": "webpack-dev-server --config ./build/webpack.dev.js",
     "build": "webpack --config ./build/webpack.prod.js",
     "npm-check": "cross-env NPM_CHECK_INSTALLER=cnpm npm-check -u"
   },
-  "author": "Simon",
+  "author": "Simon Wong",
   "license": "ISC",
   "dependencies": {
     "@hot-loader/react-dom": "^16.8.6",
