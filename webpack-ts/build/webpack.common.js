@@ -1,8 +1,9 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
-    build: path.join(__dirname, 'build'),
+    build: __dirname,
     public: path.join(__dirname, '../public'),
     src: path.join(__dirname, '../src'),
     dist: path.join(__dirname, '../dist'),
@@ -10,14 +11,15 @@ const PATHS = {
 
 module.exports = {
     entry: {
-        app: [
-            // 'react-hot-loader/patch',
-            path.join(PATHS.src, 'index'),
-        ],
+        app: path.join(PATHS.src, 'index.tsx'),
+        // app: [
+        //     // 'react-hot-loader/patch',
+        //     path.join(PATHS.src, 'index.tsx'),
+        // ],
         // vendor: ['react', 'react-dom', 'react-router-dom'],
     },
     output: {
-        filename: '[name].js', // [name]-[hash:8].js
+        filename: '[name].[hash].js', // [name]-[hash:8].js
         // publicPath: PATHS.public,
         path: PATHS.dist,
     },
@@ -50,14 +52,17 @@ module.exports = {
                 //     // 'react-hot-loader/webpack',
                 // ],
                 use: [
-                    'ts-loader',
+                    {
+                        loader: 'ts-loader',
+                        options: {},
+                    }
                 ],
             },
             {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader', // loader需要按顺序
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -73,7 +78,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader', // loader需要按顺序
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -106,7 +111,7 @@ module.exports = {
     },
     resolve: {
         // 配置默认拓展名。在import的时候就不用写后缀了
-        extensions: ['.ts', '.tsx'],
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             Components: path.join(PATHS.src, 'components'),
             Containers: path.join(PATHS.src, 'containers'),
@@ -117,12 +122,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'React App',
-            template: path.join(PATHS.build, './template/index.html'),
+            template: path.join(PATHS.build, 'template/index.html'),
             favicon: path.join(PATHS.public, 'favicon.ico'),
-            hash: true,
-            // meta: {
-            //     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-            // },
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
         }),
     ],
 }
