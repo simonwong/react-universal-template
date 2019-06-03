@@ -38,11 +38,19 @@ module.exports = {
     module: {
         rules: [
             {
-                test: /\.jsx?$/,
+                test: /\.tsx?$/,
                 exclude: /node_modules/,
+                // use: [
+                //     {
+                //         loader: 'babel-loader',
+                //     },
+                //     {
+                //         loader: 'ts-loader',
+                //     }
+                //     // 'react-hot-loader/webpack',
+                // ],
                 use: [
-                    'babel-loader?cacheDirectory',
-                    'react-hot-loader/webpack',
+                    'ts-loader',
                 ],
             },
             {
@@ -98,18 +106,18 @@ module.exports = {
     },
     resolve: {
         // 配置默认拓展名。在import的时候就不用写后缀了
-        extensions: ['.js', '.jsx', '.scss'],
+        extensions: ['.ts', '.tsx'],
         alias: {
             Components: path.join(PATHS.src, 'components'),
             Containers: path.join(PATHS.src, 'containers'),
             '@': path.join(PATHS.src),
-            'react-dom': '@hot-loader/react-dom',
+            // 'react-dom': '@hot-loader/react-dom',
         },
     },
     plugins: [
         new HtmlWebpackPlugin({
             title: 'React App',
-            template: path.join(PATHS.build, '../template/index.html'),
+            template: path.join(PATHS.build, './template/index.html'),
             favicon: path.join(PATHS.public, 'favicon.ico'),
             hash: true,
             // meta: {
