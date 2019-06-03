@@ -1,8 +1,9 @@
 const path = require('path')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
-    build: path.join(__dirname, 'build'),
+    build: __dirname,
     public: path.join(__dirname, '../public'),
     src: path.join(__dirname, '../src'),
     dist: path.join(__dirname, '../dist'),
@@ -17,7 +18,7 @@ module.exports = {
         // vendor: ['react', 'react-dom', 'react-router-dom'],
     },
     output: {
-        filename: '[name].js', // [name]-[hash:8].js
+        filename: '[name].[hash:8].js',
         // publicPath: PATHS.public,
         path: PATHS.dist,
     },
@@ -49,7 +50,7 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader', // loader需要按顺序
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -65,7 +66,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
-                    'style-loader', // loader需要按顺序
+                    MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
                         options: {
@@ -109,12 +110,11 @@ module.exports = {
     plugins: [
         new HtmlWebpackPlugin({
             title: 'React App',
-            template: path.join(PATHS.build, '../template/index.html'),
+            template: path.join(PATHS.build, 'template/index.html'),
             favicon: path.join(PATHS.public, 'favicon.ico'),
-            hash: true,
-            // meta: {
-            //     viewport: 'width=device-width, initial-scale=1, shrink-to-fit=no'
-            // },
+        }),
+        new MiniCssExtractPlugin({
+            filename: '[name].[hash].css',
         }),
     ],
 }
