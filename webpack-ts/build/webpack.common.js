@@ -113,8 +113,6 @@ module.exports = {
         // 配置默认拓展名。在import的时候就不用写后缀了
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
-            Components: path.join(PATHS.src, 'components'),
-            Containers: path.join(PATHS.src, 'containers'),
             '@': path.join(PATHS.src),
             // 'react-dom': '@hot-loader/react-dom',
         },
