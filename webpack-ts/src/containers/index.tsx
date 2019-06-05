@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import GlobalLoading from '@/component/GlobalLoading'
+import GlobalLoading from '@/components/GlobalLoading'
 
 class IndexApp extends React.Component {
     public render () {

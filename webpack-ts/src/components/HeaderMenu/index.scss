@@ -1,0 +1,23 @@
+@import '～@/styles/variable.scss';
+
+.container {
+    height: 36px;
+    line-height: 36px;
+    border-bottom: 1px solid $borderColor;
+
+    .tag {
+        display: inline-block;
+        padding: 0 20px;
+        cursor: pointer;
+        box-sizing: border-box;
+        text-decoration: none;
+
+        &.active {
+            color: $theme;
+            border-bottom: 2px solid $theme;
+        }
+        &:hover {
+            @extend .active;
+        }
+    }
+}

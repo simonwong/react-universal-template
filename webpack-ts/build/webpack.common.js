@@ -91,22 +91,22 @@ module.exports = {
                     'sass-loader',
                 ],
             },
-            // {
-            //     test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
-            //     exclude: /node_modules/,
-            //     use: [
-            //         {
-            //             loader: 'url-loader',
-            //             options: {
-            //                 limit: 8192,
-            //             },
-            //         },
-            //     ],
-            // },
-            // {
-            //     test: /\.(eot|woff|ttf|woff2|svg)$/,
-            //     use: 'url-loader',
-            // },
+            {
+                test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192,
+                        },
+                    },
+                ],
+            },
+            {
+                test: /\.(eot|woff|ttf|woff2|svg)$/,
+                use: 'url-loader',
+            },
         ],
     },
     resolve: {
