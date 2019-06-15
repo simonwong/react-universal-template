@@ -8,8 +8,8 @@ import {
 } from 'react-router-dom'
 import { hot } from 'react-hot-loader/root'
 
-import HeaderMenu from 'Components/HeaderMenu'
-import GlobalLoading from 'Components/GlobalLoading'
+import HeaderMenu from '@/components/HeaderMenu'
+import GlobalLoading from '@/components/GlobalLoading'
 import IndexHome from './Home'
 import IndexHoc from './Hoc'
 import IndexWorld from './World'

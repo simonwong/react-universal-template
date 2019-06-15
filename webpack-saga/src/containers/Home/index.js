@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
-import { actions } from '../../reducers/article.js'
+import { actions } from '@/reducers/article.js'
 import styles from './Home.scss'
 
 class IndexHome extends Component {

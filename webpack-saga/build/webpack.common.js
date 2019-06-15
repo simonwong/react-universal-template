@@ -1,5 +1,5 @@
 const path = require('path')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
@@ -54,8 +54,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true, // css模块加载
-                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            modules: {
+                                localIdentName: '[name]_[local]-[hash:base64:5]',
+                            },
                             importLoaders: 1,
                         },
                     },
@@ -70,8 +71,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true, // css模块加载
-                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            modules: {
+                                localIdentName: '[name]_[local]-[hash:base64:5]',
+                            },
                             importLoaders: 2,
                         },
                     },
@@ -101,8 +103,6 @@ module.exports = {
         // 配置默认拓展名。在import的时候就不用写后缀了
         extensions: ['.js', '.jsx', '.scss'],
         alias: {
-            Components: path.join(PATHS.src, 'components'),
-            Containers: path.join(PATHS.src, 'containers'),
             '@': path.join(PATHS.src),
             'react-dom': '@hot-loader/react-dom',
         },
