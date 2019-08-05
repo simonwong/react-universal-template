@@ -1,16 +1,19 @@
 import React, { Component } from 'react'
 
-export default class IndexHoc extends Component {
+import HocExample from './HocExample'
+
+class IndexHoc extends Component {
     constructor (props) {
         super(props)
 
         this.state = {
-            word: 'sdasd?',
+            word: 'sdasd',
         }
     }
 
     render () {
         const { word } = this.state
+
         return (
             <div>
                 { word }
@@ -21,3 +24,5 @@ export default class IndexHoc extends Component {
         )
     }
 }
+
+export default HocExample(IndexHoc)
