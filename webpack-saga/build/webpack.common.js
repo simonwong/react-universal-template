@@ -1,5 +1,6 @@
 const path = require('path')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+const Webpackbar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 
 const PATHS = {
@@ -108,6 +109,10 @@ module.exports = {
         },
     },
     plugins: [
+        new Webpackbar({
+            name: '🚚 React Template',
+            color: '#3f51b5',
+        }),
         new HtmlWebpackPlugin({
             title: 'React App',
             template: path.join(PATHS.build, 'template/index.html'),
