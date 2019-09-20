@@ -21,9 +21,4 @@ module.exports = merge(common, {
     plugins: [
         new CleanWebpackPlugin(),
     ],
-    // optimization: {
-    //     splitChunks: {
-
-    //     }
-    // }
 })

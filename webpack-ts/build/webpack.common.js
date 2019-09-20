@@ -2,6 +2,7 @@ const path = require('path')
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const Webpackbar = require('webpackbar')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const ForkTsCheckerWebpackPlugin = require('fork-ts-checker-webpack-plugin');
 
 const PATHS = {
     build: __dirname,
@@ -43,20 +44,8 @@ module.exports = {
             {
                 test: /\.tsx?$/,
                 exclude: /node_modules/,
-                // use: [
-                //     {
-                //         loader: 'babel-loader',
-                //     },
-                //     {
-                //         loader: 'ts-loader',
-                //     }
-                //     // 'react-hot-loader/webpack',
-                // ],
                 use: [
-                    {
-                        loader: 'ts-loader',
-                        options: {},
-                    }
+                    'babel-loader',
                 ],
             },
             {
@@ -67,8 +56,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true, // css模块加载
-                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            modules: {
+                                localIdentName: '[name]_[local]-[hash:base64:5]',
+                            },
                             importLoaders: 1,
                         },
                     },
@@ -83,8 +73,9 @@ module.exports = {
                     {
                         loader: 'css-loader',
                         options: {
-                            modules: true, // css模块加载
-                            localIdentName: '[name]-[local]-[hash:base64:5]', // class的命名，文件名+类名+哈希
+                            modules: {
+                                localIdentName: '[name]_[local]-[hash:base64:5]',
+                            },
                             importLoaders: 2,
                         },
                     },
@@ -111,11 +102,10 @@ module.exports = {
         ],
     },
     resolve: {
-        // 配置默认拓展名。在import的时候就不用写后缀了
         extensions: ['.ts', '.tsx', '.js', '.jsx'],
         alias: {
             '@': path.join(PATHS.src),
-            // 'react-dom': '@hot-loader/react-dom',
+            'react-dom': '@hot-loader/react-dom',
         },
     },
     plugins: [
@@ -123,6 +113,10 @@ module.exports = {
             name: '🚚 React Template',
             color: '#3f51b5',
         }),
+        new ForkTsCheckerWebpackPlugin({
+            tsconfig: path.join(__dirname, '../tsconfig.json'),
+            eslint: true,
+        }), // 在单独的进程上运行TypeScript类型检查器
         new HtmlWebpackPlugin({
             title: 'React App',
             template: path.join(PATHS.build, 'template/index.html'),
