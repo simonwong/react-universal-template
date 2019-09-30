@@ -84,13 +84,14 @@ module.exports = {
                 ],
             },
             {
-                test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
+                test: /\.(png|jpe?g|gif)$/,
                 exclude: /node_modules/,
                 use: [
                     {
                         loader: 'url-loader',
                         options: {
                             limit: 8192,
+                            name: 'img/[name].[ext]',
                         },
                     },
                 ],

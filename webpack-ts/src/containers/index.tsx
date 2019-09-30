@@ -1,16 +1,12 @@
 import * as React from 'react'
-
+import { hot } from 'react-hot-loader/root'
 import GlobalLoading from '@/components/GlobalLoading'
 
-class IndexApp extends React.Component {
-    public render () {
-        return (
-            <div>
-                主页
-                <GlobalLoading show />
-            </div>
-        )
-    }
-}
+const IndexApp = () => (
+    <div>
+        主页
+        <GlobalLoading show />
+    </div>
+)
 
-export default IndexApp
+export default hot(IndexApp)
