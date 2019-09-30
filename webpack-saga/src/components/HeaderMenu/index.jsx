@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
 import { NavLink } from 'react-router-dom'
 import PropTypes from 'prop-types'
-import styles from './HeaderMenu.scss'
+import styles from './index.scss'
 
 export default class HeaderMenu extends Component {
     handleClick = (menu) => {
-        this.props.onSelect(menu)
+        const { onSelect } = this.props
+        onSelect(menu)
     }
 
     render () {
@@ -14,7 +15,7 @@ export default class HeaderMenu extends Component {
         return (
             <nav className={styles.container}>
                 {
-                    menuList.map(menu => (
+                    menuList.map((menu) => (
                         <NavLink
                             className={styles.tag}
                             activeClassName={styles.active}

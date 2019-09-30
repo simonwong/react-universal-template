@@ -16,7 +16,7 @@ if (process.env.NODE_ENV === 'production') {
     storeEnhancers = compose(
         applyMiddleware(...middlewares, sagaMiddleware),
         // TODO: ???可视化开发工具
-        (window && window.devToolsExtension) ? window.devToolsExtension() : f => f,
+        (window && window.devToolsExtension) ? window.devToolsExtension() : (f) => f,
     )
 }
 

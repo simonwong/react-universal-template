@@ -1,6 +1,6 @@
 import React from 'react'
 
-import styles from './GlobalLoading.scss'
+import styles from './index.scss'
 
 const GlobalLoading = ({ show }) => {
     return show ? (

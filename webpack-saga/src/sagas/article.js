@@ -3,9 +3,10 @@ import { take, put, call } from 'redux-saga/effects'
 import API from '../api'
 import { actionTypes } from '../reducers/article'
 
+// eslint-disable-next-line import/prefer-default-export
 export function* getArticleList () {
     while (true) {
-        const req = yield take(actionTypes.GET_ARTICLE_LIST)
+        yield take(actionTypes.GET_ARTICLE_LIST)
         const res = yield call(API.article.getList)
 
         if (res) {

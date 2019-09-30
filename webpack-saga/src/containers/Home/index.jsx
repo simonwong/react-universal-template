@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { bindActionCreators } from 'redux'
 import { actions } from '@/reducers/article.js'
-import styles from './Home.scss'
+import styles from './index.scss'
 
 class IndexHome extends Component {
     getData = () => {
@@ -25,7 +25,7 @@ class IndexHome extends Component {
                 </div>
                 <ul className={styles.articleList}>
                     {
-                        articleList.map(item => (
+                        articleList.map((item) => (
                             <li
                                 className={styles.articleItem}
                                 key={item.id}
@@ -48,7 +48,7 @@ const mapStateToProps = (state) => {
     }
 }
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
     get_article_list: bindActionCreators(actions.get_article_list, dispatch),
 })
 

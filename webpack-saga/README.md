@@ -29,13 +29,13 @@ npm start
 
 > webpack 4.x | babel-loader 8.x | babel 7.x
 
-```javascript
+```bash
 npm install -D babel-loader @babel/core @babel/preset-env webpack
 ```
 
 > webpack 4.x | babel-loader 7.x | babel 6.x
 
-```javascript
+```bash
 npm install -D babel-loader@7 babel-core babel-preset-env webpack
 ```
 
@@ -63,5 +63,3 @@ npm install -D babel-loader@7 babel-core babel-preset-env webpack
 > - store的配置[React+Redux项目结构最佳实践](https://www.jianshu.com/p/34468f13263c)
 > - [Ant Design](https://github.com/ant-design/ant-design/)
 > - [多技术栈前端项目模板](https://github.com/wxyyxc1992/fe-boilerplate)
-
-> 暂无测试功能

@@ -1,4 +1,4 @@
-import React, { Component, Fragment } from 'react'
+import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import {
     BrowserRouter as Router,
@@ -38,7 +38,7 @@ class IndexApp extends Component {
 
         return (
             <Router>
-                <Fragment>
+                <>
                     <HeaderMenu
                         menuList={menuList}
                         activeMenu={activeMenu}
@@ -51,7 +51,7 @@ class IndexApp extends Component {
                         <Redirect exact from="/" to="/home" />
                     </Switch>
                     <GlobalLoading show={isFetching} />
-                </Fragment>
+                </>
             </Router>
         )
     }

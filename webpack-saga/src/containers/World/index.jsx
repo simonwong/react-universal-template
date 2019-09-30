@@ -35,7 +35,7 @@ export default class IndexWorld extends Component {
         return (
             <ul>
                 {
-                    data.map(item => (
+                    data.map((item) => (
                         <li key={item.id}>{ item.text }</li>
                     ))
                 }

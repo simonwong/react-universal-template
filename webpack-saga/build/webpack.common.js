@@ -82,18 +82,19 @@ module.exports = {
                     'sass-loader',
                 ],
             },
-            // {
-            //     test: /\.(png|jpg|gif|JPG|GIF|PNG|BMP|bmp|JPEG|jpeg)$/,
-            //     exclude: /node_modules/,
-            //     use: [
-            //         {
-            //             loader: 'url-loader',
-            //             options: {
-            //                 limit: 8192,
-            //             },
-            //         },
-            //     ],
-            // },
+            {
+                test: /\.(png|jpe?g|gif)$/,
+                exclude: /node_modules/,
+                use: [
+                    {
+                        loader: 'url-loader',
+                        options: {
+                            limit: 8192, // 小于这个是，会专成 base64 。大于，会使用 file-loader ，引用路径
+                            name: 'img/[name].[ext]',
+                        },
+                    },
+                ],
+            },
             // {
             //     test: /\.(eot|woff|ttf|woff2|svg)$/,
             //     use: 'url-loader',

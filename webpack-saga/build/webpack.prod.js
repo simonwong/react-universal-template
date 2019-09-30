@@ -1,7 +1,7 @@
 const merge = require('webpack-merge')
 const { CleanWebpackPlugin } = require('clean-webpack-plugin')
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin')
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin')
+const TerserJSPlugin = require('terser-webpack-plugin')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
@@ -9,13 +9,7 @@ module.exports = merge(common, {
     optimization: {
         minimizer: [
             new OptimizeCssAssetsPlugin({}),
-            new UglifyJsPlugin({
-                cache: true,
-                parallel: true,
-                uglifyOptions: {
-                    warnings: false,
-                },
-            }),
+            new TerserJSPlugin({}),
         ],
     },
     plugins: [

@@ -3,24 +3,20 @@ import React, { Component } from 'react'
 import HocExample from './HocExample'
 
 class IndexHoc extends Component {
-    constructor (props) {
-        super(props)
-
-        this.state = {
-            word: 'sdasd',
-        }
+    state = {
+        word: '好吧',
     }
 
     render () {
         const { word } = this.state
+        const { count } = this.props
 
         return (
-            <div>
-                { word }
-                <span>
-                    asdasdasd
-                </span>
-            </div>
+            <ul>
+                <li>{ word }</li>
+                <li>{ count }</li>
+                <li>没事儿</li>
+            </ul>
         )
     }
 }

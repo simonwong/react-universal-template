@@ -23,6 +23,7 @@ const eslintrc = {
         }
     },
     rules: {
+        // https://github.com/yannickcr/eslint-plugin-react/tree/master/docs/rules
         'react/jsx-indent': ['error', 4],
         'react/jsx-indent-props': ['error', 4],
         'react/no-multi-comp': ['off'],
@@ -34,7 +35,10 @@ const eslintrc = {
         }],
         'react/no-danger': 'off',
         'react/require-extension': 'off',
+        'react/jsx-props-no-spreading': 'off',
+        'react/state-in-constructor': 'off',
 
+        // https://github.com/benmosher/eslint-plugin-import
         'import/extensions': 'off',
         'import/no-unresolved': 'off',
         'import/no-extraneous-dependencies': 'off',
@@ -57,7 +61,7 @@ const eslintrc = {
         'prefer-destructuring': 'off',
         'no-param-reassign': 'off',
         'no-return-assign': 'off',
-        'max-len': 'off',
+        // 'max-len': 'off',
         'consistent-return': 'off',
         'no-redeclare': 'off',
         'comma-dangle': ['error', 'always-multiline'],
