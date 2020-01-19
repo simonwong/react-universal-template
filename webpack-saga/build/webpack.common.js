@@ -51,6 +51,7 @@ module.exports = {
                 test: /\.css$/,
                 exclude: /node_modules/,
                 use: [
+                    'css-hot-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
@@ -68,6 +69,7 @@ module.exports = {
                 test: /\.scss$/,
                 exclude: /node_modules/,
                 use: [
+                    'css-hot-loader',
                     MiniCssExtractPlugin.loader,
                     {
                         loader: 'css-loader',
@@ -117,9 +119,10 @@ module.exports = {
             title: 'React App',
             template: path.join(PATHS.build, 'template/index.html'),
             favicon: path.join(PATHS.public, 'favicon.ico'),
+            hash: true,
         }),
         new MiniCssExtractPlugin({
-            filename: '[name].[hash].css',
+            filename: '[name].css',
         }),
     ],
 }
