@@ -5,14 +5,14 @@ const TerserJSPlugin = require('terser-webpack-plugin')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-    mode: 'production',
-    optimization: {
-        minimizer: [
-            new OptimizeCssAssetsPlugin({}),
-            new TerserJSPlugin({}),
-        ],
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
+  mode: 'production',
+  optimization: {
+    minimizer: [
+      new OptimizeCssAssetsPlugin({}),
+      new TerserJSPlugin({}),
     ],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+  ],
 })

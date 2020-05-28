@@ -9,6 +9,6 @@ import './styles/common.scss'
 // const store = configureStore()
 
 ReactDOM.render(
-    <App />,
-    document.getElementById('root'),
+  <App />,
+  document.getElementById('root'),
 )

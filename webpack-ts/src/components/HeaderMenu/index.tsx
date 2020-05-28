@@ -9,35 +9,35 @@ interface IMenuProps {
 
 class HeaderMenu extends Component<IMenuProps, {}> {
     handleClick = (menu) => {
-        const { onSelect } = this.props
-        onSelect(menu)
+      const { onSelect } = this.props
+      onSelect(menu)
     }
 
     public render() {
-        const { menuList } = this.props
+      const { menuList } = this.props
 
-        return (
-            <nav className={styles.container}>
-                {
-                    menuList.map((menu) => (
-                        <NavLink
-                            className={styles.tag}
-                            activeClassName={styles.active}
-                            key={menu}
-                            to={`/${menu}`}
-                        >
-                            { menu }
-                        </NavLink>
-                    ))
-                }
-            </nav>
-        )
+      return (
+        <nav className={styles.container}>
+          {
+            menuList.map((menu) => (
+              <NavLink
+                className={styles.tag}
+                activeClassName={styles.active}
+                key={menu}
+                to={`/${menu}`}
+              >
+                { menu }
+              </NavLink>
+            ))
+          }
+        </nav>
+      )
     }
 }
 
 HeaderMenu.defaultProps = {
-    onSelect: () => {},
-    menuList: [],
+  onSelect: () => {},
+  menuList: [],
 }
 
 export default HeaderMenu

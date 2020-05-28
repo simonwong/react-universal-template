@@ -1,24 +1,24 @@
 {
-    "compilerOptions": {
-        /* Basic Options */
-        "target": "es5",
-        "module": "commonjs",
-        "allowJs": true,
-        "jsx": "react",
+  "compilerOptions": {
+    /* Basic Options */
+    "target": "es5",
+    "module": "commonjs",
+    "allowJs": true,
+    "jsx": "react",
 
-        /* Strict Type-Checking Options */
-        "strict": true,
-        // "noImplicitAny": true,
+    /* Strict Type-Checking Options */
+    "strict": true,
+    // "noImplicitAny": true,
 
-        /* Module Resolution Options */
-        "baseUrl": "./",
-        "paths": {
-            "@/*": ["./src/*"]
-        },
-        // "allowSyntheticDefaultImports": true,
-        "esModuleInterop": true
+    /* Module Resolution Options */
+    "baseUrl": "./",
+    "paths": {
+        "@/*": ["./src/*"]
     },
-    "include": [
-        "src"
-    ]
+    // "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true
+  },
+  "include": [
+    "src"
+  ]
 }
