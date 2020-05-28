@@ -7,17 +7,17 @@ const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer')
 const common = require('./webpack.common.js')
 
 module.exports = merge(common, {
-    mode: 'production',
-    optimization: {
-        minimizer: [
-            new OptimizeCssAssetsPlugin({}),
-            new TerserJSPlugin({}),
-        ],
-    },
-    plugins: [
-        new CleanWebpackPlugin(),
-        new BundleAnalyzerPlugin({
-            analyzerMode: process.env.ANALYZE === 1 ? 'disabled' : 'server',
-        }),
+  mode: 'production',
+  optimization: {
+    minimizer: [
+      new OptimizeCssAssetsPlugin({}),
+      new TerserJSPlugin({}),
     ],
+  },
+  plugins: [
+    new CleanWebpackPlugin(),
+    new BundleAnalyzerPlugin({
+      analyzerMode: process.env.ANALYZE === 1 ? 'disabled' : 'server',
+    }),
+  ],
 })

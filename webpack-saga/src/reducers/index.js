@@ -2,41 +2,41 @@ import { combineReducers } from 'redux'
 import { reducer as article } from './article'
 
 const initialState = {
-    isFetching: false,
+  isFetching: false,
 }
 
 export const actionTypes = {
-    FETCH_START: 'FETCH_START',
-    FETCH_END: 'FETCH_END',
+  FETCH_START: 'FETCH_START',
+  FETCH_END: 'FETCH_END',
 }
 
 export const actions = {
-    fetch_start: () => ({
-        type: 'FETCH_START',
-    }),
-    fetch_end: () => ({
-        type: 'FETCH_END',
-    }),
+  fetch_start: () => ({
+    type: 'FETCH_START',
+  }),
+  fetch_end: () => ({
+    type: 'FETCH_END',
+  }),
 }
 
 export const reducer = (state = initialState, action) => {
-    switch (action.type) {
-    case actionTypes.FETCH_START:
-        return {
-            ...state,
-            isFetching: true,
-        }
-    case actionTypes.FETCH_END:
-        return {
-            ...state,
-            isFetching: false,
-        }
-    default:
-        return state
+  switch (action.type) {
+  case actionTypes.FETCH_START:
+    return {
+      ...state,
+      isFetching: true,
     }
+  case actionTypes.FETCH_END:
+    return {
+      ...state,
+      isFetching: false,
+    }
+  default:
+    return state
+  }
 }
 
 export default combineReducers({
-    global: reducer,
-    article,
+  global: reducer,
+  article,
 })

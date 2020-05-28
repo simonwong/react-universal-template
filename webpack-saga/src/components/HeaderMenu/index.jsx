@@ -5,39 +5,39 @@ import styles from './index.scss'
 
 export default class HeaderMenu extends Component {
     handleClick = (menu) => {
-        const { onSelect } = this.props
-        onSelect(menu)
+      const { onSelect } = this.props
+      onSelect(menu)
     }
 
     render () {
-        const { menuList } = this.props
+      const { menuList } = this.props
 
-        return (
-            <nav className={styles.container}>
-                {
-                    menuList.map((menu) => (
-                        <NavLink
-                            className={styles.tag}
-                            activeClassName={styles.active}
-                            key={menu}
-                            to={`/${menu}`}
-                        >
-                            { menu }
-                        </NavLink>
-                    ))
-                }
-            </nav>
-        )
+      return (
+        <nav className={styles.container}>
+          {
+            menuList.map((menu) => (
+              <NavLink
+                className={styles.tag}
+                activeClassName={styles.active}
+                key={menu}
+                to={`/${menu}`}
+              >
+                { menu }
+              </NavLink>
+            ))
+          }
+        </nav>
+      )
     }
 }
 
 HeaderMenu.defaultProps = {
-    onSelect: () => {},
+  onSelect: () => {},
 }
 
 HeaderMenu.propTypes = {
-    menuList: PropTypes.arrayOf(
-        PropTypes.string
-    ).isRequired,
-    onSelect: PropTypes.func,
+  menuList: PropTypes.arrayOf(
+    PropTypes.string
+  ).isRequired,
+  onSelect: PropTypes.func,
 }

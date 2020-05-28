@@ -3,18 +3,18 @@ $fontColor: #314659;
 $borderColor: #ebedf0;
 
 @keyframes rotate {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 @mixin rotate() {
-    animation: rotate 0.6s linear infinite;
+  animation: rotate 0.6s linear infinite;
 }
 
 @mixin transition() {
-    transition: all 0.3s;
+  transition: all 0.3s;
 }

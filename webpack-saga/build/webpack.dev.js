@@ -15,6 +15,9 @@ module.exports = merge(common, {
         historyApiFallback: true,
         hot: true,
         inline: true,
+        overlay: true, // 编译错误时，将错误显示在页面上
+        quiet: true, // 不输出打包的信息
+        // compress: true, // gzip 压缩
     },
     plugins: [
         new webpack.HotModuleReplacementPlugin(),

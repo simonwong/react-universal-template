@@ -39,26 +39,26 @@ const prodBaseUrl = 'https://www.easy-mock.com/mock/5a78059745c9a13f770d64c0/any
 
 // 实例化axios
 const instance = axios.create({
-    baseURL: isDevelopment ? devBaseUrl : prodBaseUrl,
-    // timeout: 20000,
+  baseURL: isDevelopment ? devBaseUrl : prodBaseUrl,
+  // timeout: 20000,
 })
 
 // 响应拦截器
 instance.interceptors.request.use((config) => {
-    // Do something before request is sent
-    return config
+  // Do something before request is sent
+  return config
 }, (error) => {
-    // Do something with request error
-    return Promise.reject(error)
+  // Do something with request error
+  return Promise.reject(error)
 })
 
 // 请求拦截器
 instance.interceptors.response.use((res) => {
-    // Do something with response data
-    return res
+  // Do something with response data
+  return res
 }, (error) => {
-    // Do something with response error
-    return Promise.reject(error)
+  // Do something with response error
+  return Promise.reject(error)
 })
 
 const createAPI = (url, method, config) => instance({ url, method, ...config })
