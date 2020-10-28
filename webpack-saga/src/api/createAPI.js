@@ -1,8 +1,10 @@
 import axios from 'axios'
 
 const isDevelopment = process.env.NODE_ENV === 'development'
-const devBaseUrl = 'https://www.easy-mock.com/mock/5a78059745c9a13f770d64c0/anything'
-const prodBaseUrl = 'https://www.easy-mock.com/mock/5a78059745c9a13f770d64c0/anything'
+const devBaseUrl =
+  'https://www.easy-mock.com/mock/5a78059745c9a13f770d64c0/anything'
+const prodBaseUrl =
+  'https://www.easy-mock.com/mock/5a78059745c9a13f770d64c0/anything'
 
 // const codeMessage = {
 //     200: '服务器成功返回请求的数据。',
@@ -44,22 +46,28 @@ const instance = axios.create({
 })
 
 // 响应拦截器
-instance.interceptors.request.use((config) => {
-  // Do something before request is sent
-  return config
-}, (error) => {
-  // Do something with request error
-  return Promise.reject(error)
-})
+instance.interceptors.request.use(
+  config => {
+    // Do something before request is sent
+    return config
+  },
+  error => {
+    // Do something with request error
+    return Promise.reject(error)
+  },
+)
 
 // 请求拦截器
-instance.interceptors.response.use((res) => {
-  // Do something with response data
-  return res
-}, (error) => {
-  // Do something with response error
-  return Promise.reject(error)
-})
+instance.interceptors.response.use(
+  res => {
+    // Do something with response data
+    return res
+  },
+  error => {
+    // Do something with response error
+    return Promise.reject(error)
+  },
+)
 
 const createAPI = (url, method, config) => instance({ url, method, ...config })
 

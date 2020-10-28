@@ -1,12 +1,12 @@
 import React from 'react'
 
-function HocExample (WrapperComponent, state) {
+function HocExample(WrapperComponent, state) {
   return class ReturnComponent extends React.Component {
     state = {
       count: 1,
     }
 
-    componentDidMount () {
+    componentDidMount() {
       console.log(this.props)
       this.setState({
         count: 10,
@@ -14,13 +14,8 @@ function HocExample (WrapperComponent, state) {
       })
     }
 
-    render () {
-      return (
-        <WrapperComponent
-          {...this.props}
-          {...this.state}
-        />
-      )
+    render() {
+      return <WrapperComponent {...this.props} {...this.state} />
     }
   }
 }

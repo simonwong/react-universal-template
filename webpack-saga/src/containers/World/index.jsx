@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 export default class IndexWorld extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
     this.state = {
       data: [
@@ -29,16 +29,14 @@ export default class IndexWorld extends Component {
     }
   }
 
-  render () {
+  render() {
     const { data } = this.state
     console.log(data)
     return (
       <ul>
-        {
-          data.map((item) => (
-            <li key={item.id}>{ item.text }</li>
-          ))
-        }
+        {data.map(item => (
+          <li key={item.id}>{item.text}</li>
+        ))}
       </ul>
     )
   }

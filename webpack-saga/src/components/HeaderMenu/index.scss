@@ -7,10 +7,10 @@
 
     .tag {
         display: inline-block;
-        padding: 0 20px;
-        cursor: pointer;
         box-sizing: border-box;
+        padding: 0 20px;
         text-decoration: none;
+        cursor: pointer;
 
         &.active {
             color: $theme;

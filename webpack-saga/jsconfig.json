@@ -1,10 +1,10 @@
 {
-    "compilerOptions": {
-        "module": "commonjs",
-        "target": "es6",
-        "baseUrl": ".",
-        "paths": {
-            "@/*": ["./src/*"]
-        }
+  "compilerOptions": {
+    "module": "commonJS",
+    "target": "esnext",
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"]
     }
+  }
 }

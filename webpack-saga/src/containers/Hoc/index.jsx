@@ -7,14 +7,14 @@ class IndexHoc extends Component {
     word: '好吧',
   }
 
-  render () {
+  render() {
     const { word } = this.state
     const { count } = this.props
 
     return (
       <ul>
-        <li>{ word }</li>
-        <li>{ count }</li>
+        <li>{word}</li>
+        <li>{count}</li>
         <li>没事儿</li>
       </ul>
     )

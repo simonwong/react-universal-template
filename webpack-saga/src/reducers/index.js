@@ -21,18 +21,18 @@ export const actions = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-  case actionTypes.FETCH_START:
-    return {
-      ...state,
-      isFetching: true,
-    }
-  case actionTypes.FETCH_END:
-    return {
-      ...state,
-      isFetching: false,
-    }
-  default:
-    return state
+    case actionTypes.FETCH_START:
+      return {
+        ...state,
+        isFetching: true,
+      }
+    case actionTypes.FETCH_END:
+      return {
+        ...state,
+        isFetching: false,
+      }
+    default:
+      return state
   }
 }
 

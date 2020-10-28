@@ -9,14 +9,12 @@ const middlewares = []
 let storeEnhancers // 状态增强器
 
 if (process.env.NODE_ENV === 'production') {
-  storeEnhancers = compose(
-    applyMiddleware(...middlewares, sagaMiddleware)
-  )
+  storeEnhancers = compose(applyMiddleware(...middlewares, sagaMiddleware))
 } else {
   storeEnhancers = compose(
     applyMiddleware(...middlewares, sagaMiddleware),
     // TODO: ???可视化开发工具
-    (window && window.devToolsExtension) ? window.devToolsExtension() : (f) => f,
+    window && window.devToolsExtension ? window.devToolsExtension() : f => f,
   )
 }
 
@@ -27,6 +25,7 @@ const configureStore = (initialState = {}) => {
 
   if (module.hot && process.env.NODE_ENV === 'development') {
     module.hot.accept('./reducers', () => {
+      // eslint-disable-next-line global-require
       const nextRootReducer = require('./reducers/index')
       store.replaceReducer(nextRootReducer)
     })

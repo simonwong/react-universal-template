@@ -9,11 +9,11 @@
     border-bottom: 1px solid $borderColor;
 
     button {
-      border: 1px solid $theme;
-      color: #fff;
-      border-radius: 4px;
       padding: 5px 8px;
+      color: #fff;
       background: $theme;
+      border: 1px solid $theme;
+      border-radius: 4px;
       cursor: pointer;
       opacity: 0.8;
       @include transition;
@@ -30,8 +30,8 @@
     padding: 0;
 
     .articleItem {
-      padding: 10px;
       margin: 10px 0;
+      padding: 10px;
       border: 1px solid $borderColor;
       border-radius: 5px;
       cursor: pointer;

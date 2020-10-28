@@ -15,12 +15,12 @@ export const actions = {
 
 export const reducer = (state = initialState, action) => {
   switch (action.type) {
-  case actionTypes.RESPONSE_ARTICLE_LIST:
-    return {
-      ...state,
-      articleList: action.payload,
-    }
-  default:
-    return state
+    case actionTypes.RESPONSE_ARTICLE_LIST:
+      return {
+        ...state,
+        articleList: action.payload,
+      }
+    default:
+      return state
   }
 }

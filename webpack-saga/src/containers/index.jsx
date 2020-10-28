@@ -15,24 +15,20 @@ import IndexHoc from './Hoc'
 import IndexWorld from './World'
 
 class IndexApp extends Component {
-  constructor (props) {
+  constructor(props) {
     super(props)
 
     this.state = {
-      menuList: [
-        'home',
-        'hoc',
-        'world',
-      ],
+      menuList: ['home', 'hoc', 'world'],
     }
   }
 
-  changeMenu = (menu) => {
-    const { change_menu } = this.props
-    change_menu(menu)
+  changeMenu = menu => {
+    const { changeMenu } = this.props
+    changeMenu(menu)
   }
 
-  render () {
+  render() {
     const { isFetching, activeMenu } = this.props
     const { menuList } = this.state
 
@@ -57,7 +53,7 @@ class IndexApp extends Component {
   }
 }
 
-const mapStateToProps = (state) => {
+const mapStateToProps = state => {
   const { isFetching } = state.global
 
   return {
@@ -67,9 +63,6 @@ const mapStateToProps = (state) => {
 
 const mapDispatchToProps = () => ({})
 
-const ConnectApp = connect(
-  mapStateToProps,
-  mapDispatchToProps,
-)(IndexApp)
+const ConnectApp = connect(mapStateToProps, mapDispatchToProps)(IndexApp)
 
 export default hot(() => <ConnectApp />)
