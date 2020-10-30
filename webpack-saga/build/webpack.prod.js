@@ -9,10 +9,7 @@ const common = require('./webpack.common.js')
 module.exports = merge(common, {
   mode: 'production',
   optimization: {
-    minimizer: [
-      new OptimizeCssAssetsPlugin({}),
-      new TerserJSPlugin({}),
-    ],
+    minimizer: [new OptimizeCssAssetsPlugin({}), new TerserJSPlugin({})],
   },
   plugins: [
     new CleanWebpackPlugin(),
