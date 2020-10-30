@@ -1,0 +1,27 @@
+// 自动延展背景图片
+.backgroundCover() {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+// 省略
+.ellipsis-single-line() {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.ellipsis-more-line(@line: 2) {
+  display: -webkit-box;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: @line;
+  -webkit-box-orient: vertical;
+}
+
+.title (@size: 30px) {
+  color: @heading-color;
+  font-weight: bold;
+  font-weight: 500;
+  font-size: @size;
+}

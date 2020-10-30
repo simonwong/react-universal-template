@@ -1,0 +1,91 @@
+@import "~@/styles/variables.less";
+
+@footer-height: 128px;
+@button-margin: 30px;
+
+.wrapper {
+  position: relative;
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding-bottom: @footer-height + 5px;
+  background-color: #fff;
+
+  &.gray {
+    background-color: @background-gary-color;
+  }
+}
+
+.buttonGroupMix() {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 900;
+  height: @footer-height;
+  background-color: #fff;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.13);
+}
+
+
+.buttonGroup {
+  display: flex;
+  align-items: center;
+  padding: 0 @button-margin;
+
+  .buttonGroupMix();
+
+  :global {
+    .am-button-primary {
+      flex: 2 !important;
+    }
+    .am-button-ghost {
+      flex: 1;
+      background-color: #FFF0E8;
+      border: none;
+      &::before {
+        border: none !important;
+      }
+    }
+    .am-button {
+      flex: 1;
+      height: 86px;
+      font-size: 32px;
+      line-height: 86px;
+      border-radius: @border-radius-base;
+      &::before {
+        border-radius: @border-radius-base !important;
+      }
+
+      &:not(:last-child) {
+        margin-right: @button-margin;
+      }
+    }
+  }
+}
+
+
+.noFlexButtonGroup {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 0 @button-margin;
+
+  .buttonGroupMix();
+
+  :global {
+    /* stylelint-disable no-descending-specificity */
+    .am-button {
+      height: 70px;
+      padding: 0 34px;
+      font-size: 28px;
+      line-height: 70px;
+      border-radius: @border-radius-base;
+      &::before {
+        border-radius: @border-radius-base !important;
+      }
+      &:not(:last-child) {
+        margin-right: @button-margin;
+      }
+    }
+  }
+}
