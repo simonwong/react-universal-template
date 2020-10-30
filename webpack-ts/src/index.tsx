@@ -8,7 +8,4 @@ import './styles/common.scss'
 
 // const store = configureStore()
 
-ReactDOM.render(
-  <App />,
-  document.getElementById('root'),
-)
+ReactDOM.render(<App />, document.getElementById('root'))

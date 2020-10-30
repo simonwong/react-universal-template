@@ -4,7 +4,7 @@ import GlobalLoading from '@/components/GlobalLoading'
 
 const IndexApp = () => (
   <div>
-        主页
+    主页
     <GlobalLoading show />
   </div>
 )
