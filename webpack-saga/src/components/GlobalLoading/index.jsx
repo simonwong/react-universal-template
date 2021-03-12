@@ -2,8 +2,8 @@ import React from 'react'
 
 import styles from './index.scss'
 
-const GlobalLoading = ({ show }) => {
-  return show ? (
+const GlobalLoading = ({ show }) =>
+  show ? (
     <span className={styles.container}>
       <svg viewBox="0 0 32 32">
         <path
@@ -13,6 +13,5 @@ const GlobalLoading = ({ show }) => {
       </svg>
     </span>
   ) : null
-}
 
 export default GlobalLoading

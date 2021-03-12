@@ -47,26 +47,22 @@ const instance = axios.create({
 
 // 响应拦截器
 instance.interceptors.request.use(
-  config => {
+  config =>
     // Do something before request is sent
-    return config
-  },
-  error => {
+    config,
+  error =>
     // Do something with request error
-    return Promise.reject(error)
-  },
+    Promise.reject(error),
 )
 
 // 请求拦截器
 instance.interceptors.response.use(
-  res => {
+  res =>
     // Do something with response data
-    return res
-  },
-  error => {
+    res,
+  error =>
     // Do something with response error
-    return Promise.reject(error)
-  },
+    Promise.reject(error),
 )
 
 const createAPI = (url, method, config) => instance({ url, method, ...config })
